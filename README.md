@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+RAG-Powered News Chatbot - Frontend
+Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend for a RAG (Retrieval-Augmented Generation) powered chatbot over news articles.
+It handles:
 
-## Available Scripts
+Displaying chat messages for each session
 
-In the project directory, you can run:
+Sending user queries to the backend API
 
-### `npm start`
+Streaming responses from the chatbot (typed-out reply)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Resetting chat sessions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Tech Stack
 
-### `npm test`
+Frontend: React
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Styling: SCSS
 
-### `npm run build`
+Chat communication: REST API (Node.js backend)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Session handling: Redis (via backend)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Prerequisites
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Node.js >= 18.x
 
-### `npm run eject`
+NPM >= 9.x
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Getting Started (Local)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone the repository:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+git clone https://github.com/Ujjwalverma2803/rag-news-chatbot-frontend.git
+cd rag-news-chatbot-frontend
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Install dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+npm install
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Run the frontend:
 
-### Analyzing the Bundle Size
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+Open http://localhost:3000
+ in your browser.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Features
 
-### Advanced Configuration
+Chat screen: Shows past messages per session
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Input box: Allows users to type queries
 
-### Deployment
+Streaming responses: Chatbot replies appear gradually
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Reset session: Clears the current session’s history
 
-### `npm run build` fails to minify
+Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ensure your backend is running (docker-compose up --build) before starting the frontend.
