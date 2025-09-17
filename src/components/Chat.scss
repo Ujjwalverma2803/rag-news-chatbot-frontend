@@ -1,0 +1,130 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-width: 700px;
+  margin: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f3f4f6;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+
+  .chat-header {
+    background: #6d28d9; // purple accent
+    color: white;
+    padding: 14px 18px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .reset-btn {
+      background: #ef4444;
+      border: none;
+      color: white;
+      padding: 6px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #dc2626;
+      }
+    }
+  }
+
+  .chat-history {
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .bubble {
+      padding: 12px 16px;
+      border-radius: 16px;
+      max-width: 70%;
+      font-size: 14px;
+      line-height: 1.4;
+
+      &.user {
+        background: #6d28d9;
+        color: white;
+        align-self: flex-end;
+        border-bottom-right-radius: 4px;
+      }
+
+      &.assistant {
+        background: #e5e7eb;
+        color: #111;
+        align-self: flex-start;
+        border-bottom-left-radius: 4px;
+      }
+
+      &.typing {
+        display: flex;
+        gap: 5px;
+        span {
+          width: 6px;
+          height: 6px;
+          background: #555;
+          border-radius: 50%;
+          display: inline-block;
+          animation: bounce 1.4s infinite;
+        }
+        span:nth-child(2) { animation-delay: 0.2s; }
+        span:nth-child(3) { animation-delay: 0.4s; }
+      }
+    }
+  }
+
+  .chat-input {
+    display: flex;
+    padding: 12px;
+    border-top: 1px solid #ddd;
+    background: white;
+
+    input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+
+      &:focus {
+        outline: none;
+        border-color: #6d28d9;
+      }
+    }
+
+    .send-btn {
+      margin-left: 8px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      background: #6d28d9;
+      color: white;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #5b21b6;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0%, 80%, 100% { transform: scale(0.8); opacity: 0.5; }
+  40% { transform: scale(1); opacity: 1; }
+}
